@@ -1,0 +1,4 @@
+#Thu Feb 25 12:01:28 GMT-06:00 2021
+base.0=C\:\\Users\\Kelvis\\Desktop\\CICLO 01-2021\\Guias Android\\Parcial DSM 01\\Ejercicio1\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
