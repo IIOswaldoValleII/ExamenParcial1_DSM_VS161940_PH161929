@@ -31,6 +31,9 @@ public class Empleado implements Parcelable {
             Horas = in.readInt();
         }
         SueldoBase = in.readDouble();
+        ISSS = in.readDouble();
+        AFP = in.readDouble();
+        RENTA = in.readDouble();
     }
 
 

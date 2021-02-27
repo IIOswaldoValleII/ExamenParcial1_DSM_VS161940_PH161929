@@ -19,18 +19,21 @@ public class ImprimirEmpleados extends AppCompatActivity {
         //Asignando Variables a sus respuesta de impresion
         Nombre1 = findViewById(R.id.txtNombre1);
         Sueldo1 = findViewById(R.id.txtSueldo1);
+        isss1 = findViewById(R.id.txtISSS1);
         afp1 = findViewById(R.id.txtAFP1);
         renta1 = findViewById(R.id.txtRenta1);
         bono1 = findViewById(R.id.txtBono1);
 
         Nombre2 = findViewById(R.id.txtNombre2);
         Sueldo2 = findViewById(R.id.txtSueldo2);
+        isss2 = findViewById(R.id.txtISSS2);
         afp2 = findViewById(R.id.txtAFP2);
         renta2 = findViewById(R.id.txtRenta2);
         bono2 = findViewById(R.id.txtBono2);
 
         Nombre3 = findViewById(R.id.txtNombre3);
         Sueldo3 = findViewById(R.id.txtSueldo3);
+        isss3 = findViewById(R.id.txtISSS3);
         afp3 = findViewById(R.id.txtAFP3);
         renta3 = findViewById(R.id.txtRenta3);
         bono3 = findViewById(R.id.txtBono3);
@@ -41,9 +44,12 @@ public class ImprimirEmpleados extends AppCompatActivity {
 
         //Imprimiendo los valores en sus respectivos items en base a los objetos recolectados
 
-        Nombre1.setText( " "+ worker1.Nombre.toString() + " " + worker1.Apellido.toString());
-        isss1.setText("$" + worker1.SueldoBase);
 
+        Nombre1.setText( " "+ worker1.Nombre.toString() + " " + worker1.Apellido);
+        isss1.setText("$" + worker1.ISSS);
+        afp1.setText("$" + worker1.AFP);
+        renta1.setText("$" + worker1.RENTA);
+        Sueldo1.setText("$" + worker1.seldom_liquid());
 
 /*
         Nombre2.setText( " "+ worker2.Nombre.toString() + " " + worker2.Apellido);
