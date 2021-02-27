@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Asignando a variables locales los objetos en pantalla
+
         txtNombre= findViewById(R.id.txtNombre);
         txtApellido= findViewById(R.id.txtApellido);
         txtCargo= findViewById(R.id.txtCargo);
@@ -54,12 +55,14 @@ public class MainActivity extends AppCompatActivity {
 
               Limpiar();
                 i++;  //Sumando posicion para el nuevo objeto a ingresar
-              if (i==1) {
+              if (i==3) {
                   btnImprimir.setEnabled(true);
                   btnIngresar.setEnabled(false);
+
+                  //ahora que a recorrido las entradas de datos en fondo haremos el calculo de las operaciones finales
+
+
               }
-
-
               } //Fin de If vacio
             else{
               Toast toastMessage = Toast.makeText(this,"Campos vacíos",Toast.LENGTH_SHORT);

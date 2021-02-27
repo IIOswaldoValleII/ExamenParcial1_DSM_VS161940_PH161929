@@ -2,16 +2,17 @@ package sv.edu.udb.empleados;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
+import java.text.DecimalFormat;
 
 public class ImprimirEmpleados extends AppCompatActivity {
             TextView Nombre1, Sueldo1, isss1,afp1,renta1,bono1;
             TextView Nombre2, Sueldo2, isss2,afp2,renta2,bono2;
             TextView Nombre3, Sueldo3, isss3,afp3,renta3,bono3;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,43 +38,38 @@ public class ImprimirEmpleados extends AppCompatActivity {
         afp3 = findViewById(R.id.txtAFP3);
         renta3 = findViewById(R.id.txtRenta3);
         bono3 = findViewById(R.id.txtBono3);
-
+        Bundle bundle = getIntent().getExtras();
         Empleado worker1 = getIntent().getExtras().getParcelable("empleo1");
         Empleado worker2 = getIntent().getExtras().getParcelable("empleo2");
         Empleado worker3 = getIntent().getExtras().getParcelable("empleo3");
 
+
+
         //Imprimiendo los valores en sus respectivos items en base a los objetos recolectados
 
 
-        Nombre1.setText( " "+ worker1.Nombre.toString() + " " + worker1.Apellido);
-        isss1.setText("$" + worker1.ISSS);
-        afp1.setText("$" + worker1.AFP);
-        renta1.setText("$" + worker1.RENTA);
-        Sueldo1.setText("$" + worker1.seldom_liquid());
-
-/*
-        Nombre2.setText( " "+ worker2.Nombre.toString() + " " + worker2.Apellido);
-        isss2.setText("$" + worker2.ISSS);
-        afp2.setText("$" + worker2.AFP);
-        renta2.setText("$" + worker2.RENTA);
 
 
-        Nombre3.setText( " "+ worker3.Nombre.toString() + " " + worker3.Apellido);
-        isss3.setText("$" + worker3.ISSS);
-        afp3.setText("$" + worker3.AFP);
-        renta3.setText("$" + worker3.RENTA);
-*/
+             Nombre1.setText( " "+ worker1.Nombre.toString() + " " + worker1.Apellido);
+             isss1.setText("$" + String.format ("%.2f",worker1.ISSS));
+             afp1.setText("$" + String.format ("%.2f",worker1.AFP));
+             renta1.setText("$" + String.format ("%.2f",worker1.RENTA));
+             Sueldo1.setText("$"+ String.format ("%.2f",worker1.seldom_liquid()));
+             bono1.setText("$" + String.format ("%.2f",worker1.bonoGerente() ));
 
+            Nombre2.setText( " "+ worker1.Nombre.toString() + " " + worker2.Apellido);
+            isss2.setText("$" + String.format ("%.2f",worker2.ISSS));
+            afp2.setText("$" + String.format ("%.2f",worker2.AFP));
+            renta2.setText("$" + String.format ("%.2f",worker2.RENTA));
+            Sueldo2.setText("$"+ String.format ("%.2f",worker2.seldom_liquid()));
+            bono2.setText("$" + String.format ("%.2f",worker2.bonoAsistente() ));
 
-
-
-
-
-
-
-
-
-
+            Nombre3.setText( " "+ worker3.Nombre.toString() + " " + worker1.Apellido);
+            isss3.setText("$" + String.format ("%.2f",worker3.ISSS));
+            afp3.setText("$" + String.format ("%.2f",worker3.AFP));
+            renta3.setText("$" + String.format ("%.2f",worker3.RENTA));
+            Sueldo3.setText("$"+ String.format ("%.2f",worker3.seldom_liquid()));
+            bono3.setText("$" + String.format ("%.2f",worker3.bonoGerente() ));
 
     }
 }
