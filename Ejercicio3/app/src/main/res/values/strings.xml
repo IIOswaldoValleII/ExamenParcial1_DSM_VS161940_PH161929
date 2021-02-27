@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Empleados</string>
+    <string name="ingresar_empleado">Ingresar empleado</string>
+    <string name="imprimir_planilla_de_empleados">Imprimir planilla de empleados</string>
+</resources>
